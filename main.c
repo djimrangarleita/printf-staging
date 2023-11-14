@@ -21,11 +21,15 @@ int main(void)
     _printf("Length:[%d, %i]\n", len, len);
     printf("Length:[%d, %i]\n", len2, len2);
     _printf("Negative:[%d]\n", -762534);
-    printf("Negative:[%d]\n", -762534);
-    len = _printf("INT MIN:[%d]\n", INT_MIN);
-    len2 = printf("INT MIN:[%d]\n", INT_MIN);
-    //printf("Len of int min:[%d]\n", len);
-    //printf("Len of int min:[%d]\n", len2);
+    len = _printf("LLINT:[%d]\n", LLONG_MAX);
+    len2 = printf("LLINT:[%lld]\n", LLONG_MAX);
+    printf("_printf:[%d] printf[%d]\n", len, len2);
+    len = _printf("Print null:[%s]\n", (char *)NULL);
+    len = _printf("Print null:[%s]\n", (char *)NULL);
+    len = _printf("Print null:[%s]\n", "");
+    len2 = printf("Print null:[%s]\n", "");
+    printf("Len of null min:[%d]\n", len);
+    printf("Len of null min:[%d]\n", len2);
     _printf("Unsigned:[%u]\n", ui);
     printf("Unsigned:[%u]\n", ui);
     _printf("Unsigned octal:[%o]\n", ui);
@@ -46,8 +50,11 @@ int main(void)
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
-    _printf("Unknown:[%r]\n");
-    printf("Unknown:[%r]\n");
+
+
+    _printf("Print rev:[%r]\n", "Try reverse me!");
+    len = _printf("ROT13:[%R]\n", NULL);
+    printf("Len:[%d]\n", len);
 
     return (0);
 }

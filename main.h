@@ -25,13 +25,15 @@ int _strlen(char *str);
 int ppchar(va_list);
 int ppstr(va_list);
 int ppnum(va_list);
+int pprev(va_list);
+int pprot13(va_list);
 
 /*
  * Print functions
  */
 int put_char(char c);
-int print_str(char *str);
-int print_num(int n);
+int print_str(char *str, int len);
+int print_num(long long int n);
 
 /*
  * core, printf

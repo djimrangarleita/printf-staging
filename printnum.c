@@ -19,30 +19,29 @@ int ppnum(va_list ap)
  * @n: the number to print
  * Return: number of printed chars
  */
-int print_num(int n)
+int print_num(long long int n)
 {
-	int lastdigit;
-	int sign = 1;
+	int lastdigit, sign = 1, count = 0;
 	if (n < 0)
 	{
 		lastdigit = n % 10;
 		n /= -10;
 		sign = -1;
-		put_char('-');
+		count += put_char('-');
 	}
 
-	if (n > 9)
+	if (n / 10)
 	{
-		print_num(n / 10);
+		count += print_num(n / 10);
 	}
 	if (n != 0 || sign > 0)
 	{
-		put_char(n % 10 + '0');
+		count += put_char(n % 10 + '0');
 	}
 	if (sign < 0)
 	{
-		put_char('0' - lastdigit);
+		count += put_char('0' - lastdigit);
 	}
 
-	return(1);
+	return(count);
 }

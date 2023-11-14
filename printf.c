@@ -15,6 +15,8 @@ int _printf(const char *format, ...)
 		{"s", ppstr},
 		{"d", ppnum},
 		{"i", ppnum},
+		{"r", pprev},
+		{"R", pprot13},
 		{NULL, NULL}
 	};
 	va_list ap;
