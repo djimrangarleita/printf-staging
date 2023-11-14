@@ -9,7 +9,7 @@
  * @ap: arg ptr to string
  * Return: int, number of printed chars
  */
-int ppstr(va_list ap)
+int ppstr(va_list ap, char *spec)
 {
 	int count;
 	int len;
@@ -28,7 +28,7 @@ int ppstr(va_list ap)
  * @ap: ptr to list of args, the str to retrieve
  * Return: Number of printed chars
  */
-int pprev(va_list ap)
+int pprev(va_list ap, char *spec)
 {
 	int len, i, j, count = 0;
 	char *str, *tmp;
@@ -62,7 +62,7 @@ int pprev(va_list ap)
  * @ap: arg ptr
  * Return: number of printed chars
  */
-int pprot13(va_list ap)
+int pprot13(va_list ap, char *spec)
 {
 	int i, j, len, count;
 	char *tmp, *str;

@@ -34,8 +34,11 @@ int main(void)
     printf("Unsigned:[%u]\n", ui);
     _printf("Unsigned octal:[%o]\n", ui);
     printf("Unsigned octal:[%o]\n", ui);
+    printf("The ui num: [%u]\n", ui);
     _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    len = _printf("Print binary:[%b]\n", 98);
+    _printf("Count of bin is %d\n", len);
     len = _printf("Character:[%%%%%c]\n", 'H');
     len2 = printf("Character:[%%%%%c]\n", 'H');
     _printf("String:[%ss]\n", "I am a string !");
@@ -53,7 +56,7 @@ int main(void)
 
 
     _printf("Print rev:[%r]\n", "Try reverse me!");
-    len = _printf("ROT13:[%R]\n", NULL);
+    len = _printf("ROT13:[%R]\n", "#cisfun");
     printf("Len:[%d]\n", len);
 
     return (0);

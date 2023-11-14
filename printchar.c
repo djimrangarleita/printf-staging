@@ -6,7 +6,7 @@
  * @ap: ptr to list of args
  * Return: int, number of printed chars
  */
-int ppchar(va_list ap)
+int ppchar(va_list ap, char *spec)
 {
 	int count;
 

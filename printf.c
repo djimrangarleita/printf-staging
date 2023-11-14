@@ -17,6 +17,11 @@ int _printf(const char *format, ...)
 		{"i", ppnum},
 		{"r", pprev},
 		{"R", pprot13},
+		{"b", ppbnum},
+		{"x", ppbnum},
+		{"X", ppbnum},
+		{"o", ppbnum},
+		{"u", ppbnum},
 		{NULL, NULL}
 	};
 	va_list ap;
@@ -36,7 +41,7 @@ int _printf(const char *format, ...)
 			{
 				if (format[i] == *(pfuncs[j].spec))
 				{
-					count += pfuncs[j].func(ap);
+					count += pfuncs[j].func(ap, pfuncs[j].spec);
 					break;
 				}
 				j++;

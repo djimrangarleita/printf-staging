@@ -11,7 +11,7 @@
 typedef struct pfunc_t
 {
 	char *spec;
-	int (*func)(va_list);
+	int (*func)(va_list, char *);
 } pfunc_t;
 
 /*
@@ -22,11 +22,12 @@ int _strlen(char *str);
 /*
  * Utils, parsers
  */
-int ppchar(va_list);
-int ppstr(va_list);
-int ppnum(va_list);
-int pprev(va_list);
-int pprot13(va_list);
+int ppchar(va_list, char *format);
+int ppstr(va_list, char *format);
+int ppnum(va_list, char *format);
+int pprev(va_list, char *format);
+int pprot13(va_list, char *format);
+int ppbnum(va_list, char *format);
 
 /*
  * Print functions
@@ -34,6 +35,7 @@ int pprot13(va_list);
 int put_char(char c);
 int print_str(char *str, int len);
 int print_num(long long int n);
+int printb_num(unsigned int n, int base, char *spec);
 
 /*
  * core, printf
